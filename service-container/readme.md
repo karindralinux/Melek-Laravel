@@ -504,5 +504,5 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
-![Hasil dari BankPaymentGateway](/img/bankpayment_result.png)
-![Hasil dari CreditPaymentGateway](/img/creditpayment_result.png)
+![Hasil dari BankPaymentGateway](/service-container/img/bankpayment_result.png)
+![Hasil dari CreditPaymentGateway](/service-container/img/creditpayment_result.png)
