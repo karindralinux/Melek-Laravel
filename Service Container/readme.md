@@ -28,7 +28,7 @@ Anggap saja, PaymentGateway adalah class yang nantinya akan dipakai di berbagai 
 
 **PaymentGateway.php**
 
-```
+```php
 <?php
 
 namespace App\Billing;
@@ -51,7 +51,7 @@ class PaymentGateway {
 
 **PayOrderController.php**
 
-```
+```php
 <?php
 
 namespace App\Http\Controllers;
@@ -71,7 +71,7 @@ class PayOrderController extends Controller
 
 Di atas ini adalah cara umum ketika kita memanggil dan menggunakan sebuah class, disini kita panggil method charge dan mengembalikan value berupa array. sNah, seperti yang saya sebutkan sebelumnya laravel punya fitur untuk menginjeksi sebuah class dan merefleksikannya dalam bentuk parameter, sehingga kita tidak perlu untuk menginisialisasi class tersebut.
 
-```
+```php
 <?php
 
 namespace App\Http\Controllers;
