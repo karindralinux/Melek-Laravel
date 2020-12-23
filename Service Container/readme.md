@@ -25,3 +25,66 @@ Oke, mari kita bahas. Anggap saja kita ingin membuat sebuah layanan pemesanan ba
 Di dalam controller ini kita akan buat method yang akan mengeluarkan output response dari detail biaya yang harus dikeluarkan. Terlihat dalam controller tersebut kita menginisalisasi class PaymentGateway
 
 Anggap saja, PaymentGateway adalah class yang nantinya akan dipakai di berbagai class bukan hanya di PayOrderController, seperti misal untuk OrderDetails, TopUp, dll.
+
+**PaymentGateway.php**
+
+```
+<?php
+
+namespace App\Billing;
+
+use Illuminate\Support\St;
+
+class PaymentGateway {
+
+    private $currency;
+    
+    public function charge($amount) {
+        // Charge the bank
+        return [
+            'amount' => $amount - $this->discount,
+            'confirmation_number' => Str::random(),
+        ];
+    }
+}
+```
+
+**PayOrderController.php**
+
+```
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Billing\PaymentGateway;
+use App\Orders\OrderDetails;
+use Illuminate\Http\Request;
+
+class PayOrderController extends Controller
+{
+    public function store() {
+        $paymentGateway = new PaymentGateway();
+        dd($paymentGateway->charge(2500));
+    }
+}
+```
+
+Di atas ini adalah cara umum ketika kita memanggil dan menggunakan sebuah class, disini kita panggil method charge dan mengembalikan value berupa array. sNah, seperti yang saya sebutkan sebelumnya laravel punya fitur untuk menginjeksi sebuah class dan merefleksikannya dalam bentuk parameter, sehingga kita tidak perlu untuk menginisialisasi class tersebut.
+
+```
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Billing\PaymentGateway;
+use App\Orders\OrderDetails;
+use Illuminate\Http\Request;
+class PayOrderController extends Controller
+{
+    public function store(PaymentGateway $paymentGateway) {
+        dd($paymentGateway->charge(2500));
+    }
+}
+```
+
+Dengan begini, kode kita akan jauh lebih ringkas dan sebenarnya ada juga kelebihan kelebihan lain yang bisa didapatkan jika menggunakan cara ini, bersama kita akan lihat nanti..
