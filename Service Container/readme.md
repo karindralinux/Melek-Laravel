@@ -503,3 +503,6 @@ class AppServiceProvider extends ServiceProvider
     }
 }
 ```
+
+![Hasil dari BankPaymentGateway](/img/bankpayment_result.png)
+![Hasil dari CreditPaymentGateway](/img/creditpayment_result.png)
