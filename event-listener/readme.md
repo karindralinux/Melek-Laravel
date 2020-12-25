@@ -57,7 +57,7 @@ class RegisterController extends Controller
 
 Bisa dilihat kode diatas memang tidak sepenuhnya bekerja sebagaimana seharusnya, ada beberapa yang hanya saya comment dan juga ada yang dalam bentuk log saja.
 
-Untuk step mengirim email bagi kawan-kawan yang belum paham dapat melihat tulisan saya lainnya yang membahas tentang Mengirim Email di Laravel.
+Untuk step mengirim email bagi kawan-kawan yang belum paham dapat melihat tulisan saya lainnya yang membahas tentang [Mengirim Email di Laravel.!](https://karindralinux.medium.com/mengirim-email-di-laravel-59b551d58cf6)
 
 Oke, jadi intinya dalam satu kali register ada beberapa proses yang website kita lakukan :
 
